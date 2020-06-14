@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+    <title>WriteMachine Effect</title>
+    <meta charset="UTF-8"/>
+       <script src="../bootstrap-4.5.0-dist/js/jquery-3.5.1.min.js"></script>
+    <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script> 
+    <link rel='stylesheet ' href='../bootstrap-4.5.0-dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+        <style>
+            div{
+                text-align: center;
+            }
+            h1{
+               text-align: center;
+               margin-top:400px;
+               color:rgb(39, 39, 39);
+            } 
+            h3{
+                text-align: center;
+                animation: zoom 3s;
+                font-size:30px;
+                color:rgb(204, 204, 204);
+                letter-spacing: 4px;
+            } 
+            i{
+                position:absolute;
+                font-size:40px;
+                margin-top:-90px;
+                margin-left:440px;
+                animation: slash alternate ease-in-out infinite 0.3s;
+                transform: rotateX(10deg);
+                
+            }
+            @keyframes zoom {
+               20%{
+                   font-size:4px;
+               }
+               50%{
+                   font-size:10px;
+               }
+               70%{
+                   font-size:20px;
+               }
+               100%{
+                   font-size:30px;
+               }
+            }
+            @keyframes slash {
+                from{
+                    opacity: 0;
+                }to{
+                    opacity: 0.8;
+                }
+            }
+        </style>
+</head>
+<body>
+
+    <div id='overview'>
+        <h1></h1>
+            <h3>Nice to meet you</h3>
+                <i class="fas fa-slash"></i>
+    </div>
+     
+
+    <script>
+        window.addEventListener('load',writeMainn)
+       
+        var i=0 
+        var writeMain="Hello, world. I'm an effect by Leonardo Schmitt"
+      
+        var speed=30
+            function writeMainn(){
+                if(i<writeMain.length){
+                    window.document.querySelector('h1').innerHTML+= writeMain.charAt(i)
+                  
+                    i++ 
+
+                   setTimeout(writeMainn,speed)
+                }
+            }
+    
+           
+    </script>  
+</body>
+</html>
